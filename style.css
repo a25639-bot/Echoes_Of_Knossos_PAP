@@ -1,0 +1,560 @@
+/* ─────────────────────────────────────────
+   LABIRINTO — Game Website Styles
+   Dark Greek mythology aesthetic
+───────────────────────────────────────── */
+
+:root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: #7a6130;
+    --dark: #0a0806;
+    --dark-2: #110e09;
+    --dark-3: #1a1510;
+    --stone: #2a2318;
+    --stone-light: #3d3426;
+    --text: #d4c9b0;
+    --text-dim: #8a7d65;
+    --red: #8b1a1a;
+    --red-bright: #c0392b;
+    --blue: #1a3a5c;
+    --blue-bright: #2980b9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'IM Fell English', serif;
+    overflow-x: hidden;
+}
+
+/* ─── HERO ─────────────────────────────── */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 60%, #1a0e05 0%, #0a0806 70%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(201, 168, 76, 0.015) 2px,
+            rgba(201, 168, 76, 0.015) 4px
+        );
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 100%, rgba(139, 26, 26, 0.3) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.08) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 0.9;
+    letter-spacing: 0.05em;
+    text-shadow:
+        0 0 80px rgba(201, 168, 76, 0.4),
+        0 0 160px rgba(201, 168, 76, 0.15),
+        0 4px 20px rgba(0,0,0,0.8);
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.hero-subtitle {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--text-dim);
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.7s forwards;
+}
+
+.hero-btn {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--gold);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.9s forwards;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.hero-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold-dim);
+    font-size: 1.5rem;
+    animation: bounce 2s ease infinite;
+    z-index: 2;
+}
+
+/* ─── SHARED ────────────────────────────── */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text);
+    max-width: 680px;
+    margin-bottom: 4rem;
+}
+
+/* Decorative divider */
+section::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin-bottom: 0.8rem;
+}
+
+.hero::before { display: none; }
+
+/* ─── SOBRE ─────────────────────────────── */
+
+.sobre {
+    padding: 8rem 0;
+    background: var(--dark-2);
+    position: relative;
+}
+
+.sobre::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    background: var(--stone);
+    border: 1px solid var(--stone-light);
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold-dim);
+    transition: background 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold-dim);
+}
+
+.feature:hover::before {
+    background: var(--gold);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+}
+
+/* ─── DEUSES ────────────────────────────── */
+
+.deuses {
+    padding: 8rem 0;
+    background: var(--dark);
+    position: relative;
+}
+
+.deuses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.deus {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--stone-light);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.deus::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    transition: opacity 0.3s ease;
+}
+
+.deus:hover {
+    transform: translateY(-4px);
+}
+
+.deus:hover::after {
+    opacity: 0.1;
+}
+
+.deus.atena { border-color: #4a6741; }
+.deus.atena::after { background: #4a6741; }
+.deus.ares { border-color: var(--red); }
+.deus.ares::after { background: var(--red); }
+.deus.poseidon { border-color: var(--blue); }
+.deus.poseidon::after { background: var(--blue); }
+
+.deus-symbol {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.deus h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+}
+
+.deus-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+}
+
+.deus p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+}
+
+.deus-tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border: 1px solid currentColor;
+}
+
+.atena .deus-tag { color: #7aad6e; }
+.ares .deus-tag { color: var(--red-bright); }
+.poseidon .deus-tag { color: var(--blue-bright); }
+
+/* ─── INIMIGOS ──────────────────────────── */
+
+.inimigos {
+    padding: 8rem 0;
+    background: var(--dark-2);
+}
+
+.inimigos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+}
+
+.inimigo {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--stone-light);
+    transition: padding-left 0.3s ease;
+    cursor: default;
+}
+
+.inimigo:hover {
+    padding-left: 1rem;
+}
+
+.inimigo:first-child {
+    border-top: 1px solid var(--stone-light);
+}
+
+.inimigo.boss {
+    border-color: var(--gold-dim);
+}
+
+.inimigo.boss:hover {
+    background: rgba(201, 168, 76, 0.03);
+}
+
+.inimigo-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    color: var(--stone-light);
+    min-width: 60px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.inimigo:hover .inimigo-num {
+    color: var(--gold-dim);
+}
+
+.inimigo.boss .inimigo-num {
+    color: var(--gold-dim);
+    font-size: 2.5rem;
+}
+
+.inimigo.boss:hover .inimigo-num {
+    color: var(--gold);
+}
+
+.inimigo-info h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.inimigo:hover .inimigo-info h3 {
+    color: var(--gold);
+}
+
+.inimigo.boss .inimigo-info h3 {
+    color: var(--gold);
+    font-size: 1.4rem;
+}
+
+.inimigo-info p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+}
+
+/* ─── FINAL ─────────────────────────────── */
+
+.final {
+    padding: 8rem 0;
+    background: var(--dark);
+}
+
+.finais-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.fim {
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--stone-light);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.fim:hover {
+    transform: translateY(-4px);
+}
+
+.fim::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+}
+
+.fim.liberdade::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.fim.prisioneiro::before { background: linear-gradient(90deg, var(--red), #5a0000); }
+
+.fim h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.liberdade h3 { color: var(--gold); }
+.prisioneiro h3 { color: var(--red-bright); }
+
+.fim p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+}
+
+/* ─── FOOTER ────────────────────────────── */
+
+.footer {
+    padding: 4rem 0;
+    background: var(--dark);
+    border-top: 1px solid var(--stone-light);
+    text-align: center;
+}
+
+.footer-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.5rem;
+    color: var(--gold-dim);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2em;
+}
+
+.footer-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+/* ─── ANIMATIONS ────────────────────────── */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ─── RESPONSIVE ────────────────────────── */
+
+@media (max-width: 768px) {
+    .finais-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inimigo {
+        gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+    }
+}

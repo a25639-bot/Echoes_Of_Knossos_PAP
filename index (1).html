@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labirinto — Enfrenta o Minotauro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Uma história de labirintos e deuses</p>
+            <h1 class="hero-title">LABIRINTO</h1>
+            <p class="hero-subtitle">Sobrevive. Escolhe. Enfrenta o destino.</p>
+            <a href="#sobre" class="hero-btn">Descobrir o Jogo</a>
+        </div>
+        <div class="scroll-hint">↓</div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="section-label">O Jogo</div>
+            <h2 class="section-title">Perdido no Labirinto do Minotauro</h2>
+            <p class="section-text">
+                Acordas no coração de um labirinto antigo. Não sabes como chegaste aqui — 
+                mas sabes que tens de sair. Explora salas esquecidas, encontra aliados improváveis, 
+                recebe a bênção dos deuses e enfrenta o terrível Minotauro numa batalha final 
+                que decidirá o teu destino.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>Combate Intenso</h3>
+                    <p>Luta contra inimigos únicos incluindo o Cavaleiro, o Esqueleto e a Górgona com veneno.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔱</div>
+                    <h3>Bênçãos dos Deuses</h3>
+                    <p>As tuas escolhas determinam quais deuses te favorecem — Atena, Ares ou Poseidon.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Caminhos Diferentes</h3>
+                    <p>Cada decisão muda a tua aventura. Explorar ou avançar? Salvar ou atacar?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEUSES -->
+    <section class="deuses" id="deuses">
+        <div class="container">
+            <div class="section-label">Bênçãos</div>
+            <h2 class="section-title">Os Deuses Observam</h2>
+            <div class="deuses-grid">
+                <div class="deus atena">
+                    <div class="deus-symbol">🦉</div>
+                    <h3>Atena</h3>
+                    <p class="deus-titulo">Deusa da Sabedoria</p>
+                    <p>Explora a sala inicial e encontra a carta oculta. A Égide de Atena aumenta a tua defesa.</p>
+                    <div class="deus-tag">Defesa +25%</div>
+                </div>
+                <div class="deus ares">
+                    <div class="deus-symbol">🗡️</div>
+                    <h3>Ares</h3>
+                    <p class="deus-titulo">Deus da Guerra</p>
+                    <p>Mata o NPC encurralado no labirinto. A brutalidade tem as suas recompensas.</p>
+                    <div class="deus-tag">Poder de Ataque</div>
+                </div>
+                <div class="deus poseidon">
+                    <div class="deus-symbol">🔱</div>
+                    <h3>Poseidon</h3>
+                    <p class="deus-titulo">Deus do Mar</p>
+                    <p>Dá comida ao NPC faminto. A misericórdia não passa despercebida pelos imortais.</p>
+                    <div class="deus-tag">Favor Divino</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INIMIGOS -->
+    <section class="inimigos" id="inimigos">
+        <div class="container">
+            <div class="section-label">Ameaças</div>
+            <h2 class="section-title">O Que te Aguarda</h2>
+            <div class="inimigos-list">
+                <div class="inimigo">
+                    <div class="inimigo-num">01</div>
+                    <div class="inimigo-info">
+                        <h3>Cavaleiro</h3>
+                        <p>Guarda leal do labirinto. Patrulha o chão e ataca qualquer intruso que se aproxime.</p>
+                    </div>
+                </div>
+                <div class="inimigo">
+                    <div class="inimigo-num">02</div>
+                    <div class="inimigo-info">
+                        <h3>Esqueleto</h3>
+                        <p>Restos dos que falharam antes de ti. Sem medo, sem piedade — apenas ossos e fúria.</p>
+                    </div>
+                </div>
+                <div class="inimigo">
+                    <div class="inimigo-num">03</div>
+                    <div class="inimigo-info">
+                        <h3>Górgona</h3>
+                        <p>O seu veneno persiste muito depois do golpe. Cada mordida é uma condenação lenta.</p>
+                    </div>
+                </div>
+                <div class="inimigo boss">
+                    <div class="inimigo-num">☠</div>
+                    <div class="inimigo-info">
+                        <h3>Minotauro</h3>
+                        <p>O senhor do labirinto. Enfrenta-o na arena final — ou foge e vive com a vergonha.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final" id="final">
+        <div class="container">
+            <div class="section-label">Destino</div>
+            <h2 class="section-title">Dois Finais. Uma Escolha.</h2>
+            <div class="finais-grid">
+                <div class="fim liberdade">
+                    <h3>Liberdade</h3>
+                    <p>Derrota o Minotauro e regressa à vida que conhecias. Alterado. Marcado. Mas livre.</p>
+                </div>
+                <div class="fim prisioneiro">
+                    <h3>Prisioneiro</h3>
+                    <p>Falha na batalha e fica preso no labirinto para sempre. O labirinto torna-se o teu mundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-title">LABIRINTO</p>
+            <p class="footer-sub">Desenvolvido como projeto de curso · 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
