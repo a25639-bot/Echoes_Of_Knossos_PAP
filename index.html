@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echoes of Knossos</title>
+    <title>Echoes of Knossos — O Jogo</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
@@ -11,139 +11,151 @@
 
     <div class="scanlines"></div>
 
-    <header class="header">
+    <header class="main-header">
         <div class="header-container">
-            <a href="#" class="logo">🔱 KNOSSOS</a>
-            <nav class="nav">
-                <a href="#sobre">&gt; O JOGO</a>
-                <a href="#deuses">&gt; BÊNÇÃOS</a>
-                <a href="#inimigos">&gt; AMEAÇAS</a>
-                <a href="#final">&gt; DESTINO</a>
+            <a href="#" class="logo-link">🔱 KNOSSOS</a>
+            <nav class="main-nav">
+                <a href="#sobre">O JOGO</a>
+                <a href="#deuses">BÊNÇÃOS</a>
+                <a href="#inimigos">AMEAÇAS</a>
+                <a href="#final">DESTINO</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-eyebrow">// UM JOGO DE AÇÃO E ESCOLHAS //</p>
-            <h1 class="hero-title">ECHOES OF<br>KNOSSOS</h1>
-            <p class="hero-subtitle">_ Sobrevive. Escolhe. Enfrenta o destino. _</p>
-            <a href="#sobre" class="hero-btn">&gt; DESCOBRIR O JOGO</a>
-        </div>
-        <div class="scroll-hint">▼</div>
-    </section>
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-inner">
+                <p class="hero-tagline">// UM JOGO DE AÇÃO E ESCOLHAS //</p>
+                <h1 class="hero-main-title">ECHOES OF<br><span class="highlight-red">KNOSSOS</span></h1>
+                <p class="hero-description">Sobrevive. Escolhe. Enfrenta o teu destino no coração do labirinto.</p>
+                <a href="#sobre" class="hero-action-btn">EXPLORAR LABIRINTO</a>
+            </div>
+            <div class="scroll-indicator">▼</div>
+        </section>
 
-    <section class="sobre" id="sobre">
-        <div class="container">
-            <p class="section-label">// O JOGO</p>
-            <h2 class="section-title">PERDIDO NO LABIRINTO</h2>
-            <p class="section-text">
-                Acordas no coração de um labirinto antigo. Não sabes como chegaste aqui —
-                mas sabes que tens de sair. Explora salas esquecidas, encontra aliados improváveis,
-                recebe a bênção dos deuses e enfrenta o terrível Minotauro numa batalha final
-                que decidirá o teu destino.
-            </p>
-            <div class="features">
-                <div class="feature">
-                    <p class="feature-icon">[ ⚔ ]</p>
-                    <h3>&gt; COMBATE INTENSO</h3>
-                    <p>Luta contra as forças que assombram os corredores com golpes precisos e reflexos rápidos.</p>
-                </div>
-                <div class="feature">
-                    <p class="feature-icon">[ ✦ ]</p>
-                    <h3>&gt; BÊNÇÃOS DOS DEUSES</h3>
-                    <p>As tuas escolhas determinam quais deuses te favorecem — Atena, Ares ou Poseidon.</p>
-                </div>
-                <div class="feature">
-                    <p class="feature-icon">[ ◈ ]</p>
-                    <h3>&gt; CAMINHOS DIFERENTES</h3>
-                    <p>Cada decisão muda a tua aventura. Explorar ou avançar? Salvar ou atacar?</p>
+        <section class="content-section sobre-bg" id="sobre">
+            <div class="content-container">
+                <p class="section-badge">// A AVENTURA</p>
+                <h2 class="section-heading">PERDIDO NO LABIRINTO</h2>
+                <p class="section-paragraph">
+                    Acordas no coração de um labirinto antigo e esquecido pelo tempo. Sem memórias do passado, 
+                    a tua única certeza é a necessidade de escapar. Explora salas misteriosas, toma decisões de vida 
+                    ou morte, recebe o auxílio dos deuses do Olimpo e prepara-te para o confronto final contra o temível Minotauro.
+                </p>
+                
+                <div class="highlights-grid">
+                    <article class="highlight-card">
+                        <div class="card-icon">⚔</div>
+                        <h3>COMBATE INTENSO</h3>
+                        <p>Enfrenta hordas de criaturas implacáveis com golpes rápidos e desvios precisos no momento certo.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="card-icon">✦</div>
+                        <h3>BÊNÇÃOS DIVINAS</h3>
+                        <p>Ganha o respeito e o favor dos deuses. As tuas ações determinam se recebes o poder de Ares, Atena ou Poseidon.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <div class="card-icon">◈</div>
+                        <h3>ESCOLHAS COM IMPACTO</h3>
+                        <p>Cada caminho tomado altera o rumo da tua jornada. Serás misericordioso ou focar-te-ás apenas na tua sobrevivência?</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="deuses" id="deuses">
-        <div class="container">
-            <p class="section-label">// BÊNÇÃOS</p>
-            <h2 class="section-title">OS DEUSES OBSERVAM</h2>
-            <div class="deuses-grid">
-                <div class="deus atena">
-                    <p class="deus-symbol">[ 🦉 ]</p>
-                    <h3>ATENA</h3>
-                    <p class="deus-titulo">// DEUSA DA SABEDORIA</p>
-                    <p>Explora os segredos ocultos do labirinto. A Égide protetora de Atena fortalece a tua resistência contra os perigos ocultos.</p>
-                    <span class="deus-tag">DEFESA +25%</span>
-                </div>
-                <div class="deus ares">
-                    <p class="deus-symbol">[ 🗡 ]</p>
-                    <h3>ARES</h3>
-                    <p class="deus-titulo">// DEUS DA GUERRA</p>
-                    <p>Abraça o confronto. O Deus da Guerra recompensa a agressividade pura, transformando cada golpe teu numa força destrutiva.</p>
-                    <span class="deus-tag">PODER DE ATAQUE</span>
-                </div>
-                <div class="deus poseidon">
-                    <p class="deus-symbol">[ 🔱 ]</p>
-                    <h3>POSEIDON</h3>
-                    <p class="deus-titulo">// DEUS DO MAR</p>
-                    <p>Demonstra misericórdia perante os perdidos. O favor do mar concede-te a resiliência necessária para curar as tuas feridas.</p>
-                    <span class="deus-tag">FAVOR DIVINO</span>
+        <section class="content-section deuses-bg" id="deuses">
+            <div class="content-container">
+                <p class="section-badge">// SISTEMA DE FAVORES</p>
+                <h2 class="section-heading">OS DEUSES OBSERVAM</h2>
+                
+                <div class="cards-layout">
+                    <article class="god-card atena-border">
+                        <div class="god-icon">🦉</div>
+                        <h3>ATENA</h3>
+                        <p class="god-subtitle">// SABEDORIA E PROTEÇÃO</p>
+                        <p class="god-text">Explora os recantos mais escondidos para desvendar relíquias ocultas. A Égide protetora de Atena garante-te uma resistência defensiva sem igual contra os perigos da masmorra.</p>
+                        <div class="god-bonus atena-text">BÓNUS: +25% DEFESA</div>
+                    </article>
+
+                    <article class="god-card ares-border">
+                        <div class="god-icon">🗡</div>
+                        <h3>ARES</h3>
+                        <p class="god-subtitle">// BRUTALIDADE E GUERRA</p>
+                        <p class="god-text">Escolha o caminho do confronto direto. O Deus da Guerra recompensa a coragem e a agressividade pura na arena, aumentando drasticamente a força de cada um dos teus ataques.</p>
+                        <div class="god-bonus ares-text">BÓNUS: PODER DE ATAQUE</div>
+                    </article>
+
+                    <article class="god-card poseidon-border">
+                        <div class="god-icon">🔱</div>
+                        <h3>POSEIDON</h3>
+                        <p class="god-subtitle">// MARES E RESILIÊNCIA</p>
+                        <p class="god-text">Demonstra compaixão para com as almas perdidas que habitam o labirinto. O governante dos oceanos recompensa a tua bondade com a energia vital necessária para curar feridas.</p>
+                        <div class="god-bonus poseidon-text">BÓNUS: FAVOR VITAL</div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="inimigos" id="inimigos">
-        <div class="container">
-            <p class="section-label">// AMEAÇAS</p>
-            <h2 class="section-title">O QUE TE AGUARDA NAS SOMBRAS</h2>
-            <div class="inimigos-list">
-                <div class="inimigo">
-                    <span class="inimigo-num">01</span>
-                    <div class="inimigo-info">
-                        <h3>CAVALEIRO DE PEDRA</h3>
-                        <p>Guarda leal das ruínas. Patrulha os pisos incansavelmente e ataca qualquer intruso sem hesitar.</p>
-                    </div>
-                </div>
-                <div class="inimigo">
-                    <span class="inimigo-num">02</span>
-                    <div class="inimigo-info">
-                        <h3>FLYING EYE</h3>
-                        <p>Sentinela voadora que vigia os céus do labirinto. Ataca à distância e persegue quem desafiar o seu território.</p>
-                    </div>
-                </div>
-                <div class="inimigo boss">
-                    <span class="inimigo-num">☠</span>
-                    <div class="inimigo-info">
-                        <h3>O MINOTAURO</h3>
-                        <p>O senhor absoluto do labirinto. Uma força brutal imparável que te aguarda na arena do confronto final.</p>
-                    </div>
+        <section class="content-section inimigos-bg" id="inimigos">
+            <div class="content-container">
+                <p class="section-badge">// BESTIÁRIO</p>
+                <h2 class="section-heading">AS AMEAÇAS DO LABIRINTO</h2>
+                
+                <div class="enemies-list">
+                    <article class="enemy-item">
+                        <span class="enemy-index">01</span>
+                        <div class="enemy-content">
+                            <h3>CAVALEIRO DE PEDRA</h3>
+                            <p>Um antigo sentinela de armadura pesada. Patrulha as plataformas de pedra e ataca qualquer intruso que cruze o seu campo de visão.</p>
+                        </div>
+                    </article>
+
+                    <article class="enemy-item">
+                        <span class="enemy-index">02</span>
+                        <div class="enemy-content">
+                            <h3>FLYING EYE</h3>
+                            <p>Uma criatura voadora bizarra que vigia as salas a partir do ar. Ataca à distância e persegue os jogadores sem descanso.</p>
+                        </div>
+                    </article>
+
+                    <article class="enemy-item enemy-boss">
+                        <span class="enemy-index red-text">☠</span>
+                        <div class="enemy-content">
+                            <h3 class="red-text">O MINOTAURO SUPREMO</h3>
+                            <p>O mestre e guardião absoluto de Cnossos. Uma força bruta destrutiva que te espera na arena final para testar o teu verdadeiro valor.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="final" id="final">
-        <div class="container">
-            <p class="section-label">// DESTINO</p>
-            <h2 class="section-title">DOIS FINAIS. UMA ESCOLHA.</h2>
-            <div class="finais-grid">
-                <div class="fim liberdade">
-                    <h3>[ LIBERDADE ]</h3>
-                    <p>Supera o último guardião e quebra a maldição ancestral. Regressa ao mundo exterior livre, mas marcado para sempre.</p>
-                </div>
-                <div class="fim prisioneiro">
-                    <h3>[ PRISIONEIRO ]</h3>
-                    <p>Falha no teste de força e fica consumido pelas sombras. O labirinto reclama a tua alma e torna-se a tua prisão eterna.</p>
+        <section class="content-section destino-bg" id="final">
+            <div class="content-container">
+                <p class="section-badge">// CONCLUSÃO</p>
+                <h2 class="section-heading">DOIS FINAIS. UMA ESCOLHA.</h2>
+                
+                <div class="destiny-layout">
+                    <article class="destiny-card liberty">
+                        <h3>[ LIBERDADE ]</h3>
+                        <p>Derrota o lendário guardião no confronto final, quebra o ciclo de maldições e alcança a superfície. Escapa do labirinto livre, mas transformado para sempre pela experiência.</p>
+                    </article>
+
+                    <article class="destiny-card prisoner">
+                        <h3>[ PRISIONEIRO ]</h3>
+                        <p>Cai perante o poder devastador do Minotauro ou toma as decisões erradas ao longo do percurso. O labirinto consome a tua vontade e ficas preso nos seus corredores para a eternidade.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-title">ECHOES OF KNOSSOS</p>
-            <p class="footer-sub">// DESENVOLVIDO COMO PROJETO DE CURSO · 2026 //</p>
+    </main>
+
+    <footer class="main-footer">
+        <div class="content-container">
+            <p class="footer-brand">ECHOES OF KNOSSOS</p>
+            <p class="footer-info">// DESENVOLVIDO COMO PROJETO DE CURSO · 2026 //</p>
         </div>
     </footer>
 
