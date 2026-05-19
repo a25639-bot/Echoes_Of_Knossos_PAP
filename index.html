@@ -3,147 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echoes of Knossos</title>
+    <title>Echoes of Knossos — Website Oficial</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- player -->
     <section class="hero">
-        <div class="scanlines"></div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-eyebrow">// UM JOGO DE AÇÃO E ESCOLHAS //</p>
-            <h1 class="hero-title">ECHOES OF<br>KNOSSOS</h1>
-            <p class="hero-subtitle">_ Sobrevive. Escolhe. Enfrenta o destino. _</p>
-            <a href="#sobre" class="hero-btn">&gt; DESCOBRIR O JOGO</a>
+            <p class="hero-eyebrow">// PROVA DE APTIDÃO PROFISSIONAL //</p>
+            <h1 class="hero-title">ECHOES OF<br><span class="gold-text">KNOSSOS</span></h1>
+            <p class="hero-subtitle">Desvenda os segredos de Cnossos. Recebe as bênçãos dos deuses. Enfrenta o teu destino.</p>
+            <div class="hero-actions">
+                <a href="#sobre" class="btn btn-primary">&gt; JOGAR AGORA</a>
+                <a href="#deuses" class="btn btn-secondary">BÊNÇÃOS DIVINAS</a>
+            </div>
         </div>
-        <div class="scroll-hint">▼</div>
+        <div class="scroll-hint">▼ DESCE PARA EXPLORAR ▼</div>
     </section>
 
-    <!-- SOBRE -->
     <section class="sobre" id="sobre">
         <div class="container">
-            <p class="section-label">// O JOGO</p>
-            <h2 class="section-title">PERDIDO NO LABIRINTO</h2>
+            <p class="section-label">// ENQUADRAMENTO NARRATIVO</p>
+            <h2 class="section-title">PERDIDO NO LABIRINTO DE CNOSSOS</h2>
             <p class="section-text">
-                Acordas no coração de um labirinto antigo. Não sabes como chegaste aqui —
-                mas sabes que tens de sair. Explora salas esquecidas, encontra aliados improváveis,
-                recebe a bênção dos deuses e enfrenta o terrível Minotauro numa batalha final
-                que decidirá o teu destino.
+                Na pele de Aiden Clark, acordas no coração de uma estrutura milenar repleta de armadilhas e perigos. 
+                Não há memórias de como chegaste aqui — mas o objetivo é claro: sobreviver. Explora salas esquecidas, 
+                recolhe relíquias sagradas e decide o destino de aliados e inimigos numa jornada pixelizada de pura ação.
             </p>
+            
             <div class="features">
-                <div class="feature">
-                    <p class="feature-icon">[ ⚔ ]</p>
-                    <h3>&gt; COMBATE INTENSO</h3>
-                    <p>Luta contra inimigos únicos — Cavaleiro, Esqueleto e a Górgona com veneno.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">⚔</div>
+                    <h3>COMBATE MODULAR</h3>
+                    <p>Sistemas físicos precisos controlados por Hitboxes dinâmicas e animações fluidas obtidas via Mixamo.</p>
                 </div>
-                <div class="feature">
-                    <p class="feature-icon">[ ✦ ]</p>
-                    <h3>&gt; BÊNÇÃOS DOS DEUSES</h3>
-                    <p>As tuas escolhas determinam quais deuses te favorecem — Atena, Ares ou Poseidon.</p>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>BÊNÇÃOS DINÂMICAS</h3>
+                    <p>As tuas ações determinam o favor divino. Escolhe entre o poder de Ares, a defesa de Atena ou a fortuna de Poseidon.</p>
                 </div>
-                <div class="feature">
-                    <p class="feature-icon">[ ◈ ]</p>
-                    <h3>&gt; CAMINHOS DIFERENTES</h3>
-                    <p>Cada decisão muda a tua aventura. Explorar ou avançar? Salvar ou atacar?</p>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>IA AVANÇADA</h3>
+                    <p>Inimigos com lógica própria. Patrulhas inteligentes com deteção de precipícios e perseguições implacáveis.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DEUSES -->
     <section class="deuses" id="deuses">
         <div class="container">
-            <p class="section-label">// BÊNÇÃOS</p>
-            <h2 class="section-title">OS DEUSES OBSERVAM</h2>
+            <p class="section-label">// MECÂNICA DE PROGRESSÃO</p>
+            <h2 class="section-title">OS OLHOS DO OLIMPO</h2>
             <div class="deuses-grid">
-                <div class="deus atena">
-                    <p class="deus-symbol">[ 🦉 ]</p>
+                <div class="deus-card atena">
+                    <div class="deus-badge">🦉 DEFESA</div>
                     <h3>ATENA</h3>
-                    <p class="deus-titulo">// DEUSA DA SABEDORIA</p>
-                    <p>Explora a sala inicial e encontra a carta oculta. A Égide de Atena aumenta a tua defesa.</p>
-                    <span class="deus-tag">DEFESA +25%</span>
+                    <p class="deus-lore">// DEUSA DA SABEDORIA</p>
+                    <p class="deus-desc">Encontra a carta oculta na sala inicial do labirinto. A Égide de Atena garante uma barreira mística protetora permanente.</p>
+                    <div class="deus-stat">EFEITO: +25% DEFESA FÍSICA</div>
                 </div>
-                <div class="deus ares">
-                    <p class="deus-symbol">[ 🗡 ]</p>
+                <div class="deus-card ares">
+                    <div class="deus-badge">🗡 ATQUE</div>
                     <h3>ARES</h3>
-                    <p class="deus-titulo">// DEUS DA GUERRA</p>
-                    <p>Mata o NPC encurralado no labirinto. A brutalidade tem as suas recompensas.</p>
-                    <span class="deus-tag">PODER DE ATAQUE</span>
+                    <p class="deus-lore">// DEUS DA GUERRA</p>
+                    <p class="deus-desc">Elimina o guerreiro encurralado. A brutalidade agrada ao Deus da Guerra, recompensando-te com um bónus destrutivo.</p>
+                    <div class="deus-stat">EFEITO: +30% DANO CRÍTICO</div>
                 </div>
-                <div class="deus poseidon">
-                    <p class="deus-symbol">[ 🔱 ]</p>
+                <div class="deus-card poseidon">
+                    <div class="deus-badge">🔱 AUXÍLIO</div>
                     <h3>POSEIDON</h3>
-                    <p class="deus-titulo">// DEUS DO MAR</p>
-                    <p>Dá comida ao NPC faminto. A misericórdia não passa despercebida pelos imortais.</p>
-                    <span class="deus-tag">FAVOR DIVINO</span>
+                    <p class="deus-lore">// DEUS DOS MARES</p>
+                    <p class="deus-desc">Oferece mantimentos ao prisioneiro faminto. A misericórdia ativa o favor das marés, regenerando a vitalidade perdida.</p>
+                    <div class="deus-stat">EFEITO: REGENERAÇÃO DE VIDA</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INIMIGOS -->
     <section class="inimigos" id="inimigos">
         <div class="container">
-            <p class="section-label">// AMEAÇAS</p>
-            <h2 class="section-title">O QUE TE AGUARDA</h2>
-            <div class="inimigos-list">
-                <div class="inimigo">
-                    <span class="inimigo-num">01</span>
-                    <div class="inimigo-info">
-                        <h3>CAVALEIRO</h3>
-                        <p>Guarda leal do labirinto. Patrulha o chão e ataca qualquer intruso.</p>
+            <p class="section-label">// BESTIÁRIO TÉCNICO</p>
+            <h2 class="section-title">ENTIDADES E PADRÕES DE IA</h2>
+            
+            <div class="tabs-container">
+                <input type="radio" name="enemy-tabs" id="tab-knight" checked class="tab-switch">
+                <label for="tab-knight" class="tab-label">01. KNIGHT</label>
+                
+                <input type="radio" name="enemy-tabs" id="tab-eye" class="tab-switch">
+                <label for="tab-eye" class="tab-label">02. FLYING EYE</label>
+                
+                <input type="radio" name="enemy-tabs" id="tab-minotaur" class="tab-switch">
+                <label for="tab-minotaur" class="tab-label">☠ MINOTAUR</label>
+
+                <div class="tab-content content-knight">
+                    <div class="enemy-view">
+                        <div class="enemy-details">
+                            <span class="enemy-type">INIMIGO TERRESTRE / PATRULHA</span>
+                            <h3>O CAVALEIRO DE PEDRA</h3>
+                            <p>Guardião básico dos corredores inferiores. Utiliza um sistema automático de <strong>Cliff Detection</strong> para identificar o fim das plataformas ou paredes, invertendo o sentido de marcha automaticamente para manter a patrulha ativa.</p>
+                            <ul class="enemy-components">
+                               <li>Componentes: Rigidbody2D, Damageable, DetectionZone</li>
+                               <li>Comportamento: Patrulha linear + Perseguição por proximidade</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="inimigo">
-                    <span class="inimigo-num">02</span>
-                    <div class="inimigo-info">
-                        <h3>ESQUELETO</h3>
-                        <p>Restos dos que falharam antes de ti. Sem medo, sem piedade.</p>
+
+                <div class="tab-content content-eye">
+                    <div class="enemy-view">
+                        <div class="enemy-details">
+                            <span class="enemy-type">INIMIGO VOADOR / DISTÂNCIA</span>
+                            <h3>FLYING EYE (OLHO vOADOR)</h3>
+                            <p>Sentinela aérea do labirinto. Ao contrário dos inimigos terrestres, o Olho Voador navega de forma tridimensional utilizando um array de <strong>Waypoints</strong> pré-definidos no espaço. Ao morrer, a sua física é alterada, simulando uma queda natural sob efeito da gravidade.</p>
+                            <ul class="enemy-components">
+                               <li>Componentes: WaypointNavigator, CircleCollider2D (Trigger)</li>
+                               <li>Comportamento: Ataque aéreo à distância + Queda Física Post-Mortem</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="inimigo">
-                    <span class="inimigo-num">03</span>
-                    <div class="inimigo-info">
-                        <h3>GÓRGONA</h3>
-                        <p>O seu veneno persiste muito depois do golpe. Cada mordida é uma condenação lenta.</p>
-                    </div>
-                </div>
-                <div class="inimigo boss">
-                    <span class="inimigo-num">☠</span>
-                    <div class="inimigo-info">
-                        <h3>MINOTAURO</h3>
-                        <p>O senhor do labirinto. Enfrenta-o na arena final — ou foge e vive com a vergonha.</p>
+
+                <div class="tab-content content-minotaur">
+                    <div class="enemy-view">
+                        <div class="enemy-details">
+                            <span class="enemy-type">BOSS FINAL / ARENA</span>
+                            <h3>O MINOTAURO SUPREMO</h3>
+                            <p>O senhor absoluto do labirinto. Esta entidade possui uma máquina de estados complexa assente em zonas concêntricas (Detection Zones). Se o jogador for avistado na zona externa, inicia uma investida em carga acelerada; se entrar na zona interna, desencadeia ataques pesados sincronizados via <strong>Animation Events</strong>.</p>
+                            <ul class="enemy-components">
+                               <li>Componentes: Multi-Zone Controller, Custom Cooldown Timer, Boss UI Hook</li>
+                               <li>Comportamento: Avanço em Carga, Ataques de Área e Gatilho de Fim de Jogo</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FINAL -->
-    <section class="final" id="final">
+    <section class="destino" id="destino">
         <div class="container">
-            <p class="section-label">// DESTINO</p>
-            <h2 class="section-title">DOIS FINAIS. UMA ESCOLHA.</h2>
+            <p class="section-label">// CONDIÇÕES DE VITÓRIA E DERROTA</p>
+            <h2 class="section-title">DOIS CAMINHOS. UM DESTINO.</h2>
             <div class="finais-grid">
-                <div class="fim liberdade">
+                <div class="destino-card vitoria">
+                    <div class="destino-icon"></div>
                     <h3>[ LIBERDADE ]</h3>
-                    <p>Derrota o Minotauro e regressa à vida que conhecias. Alterado. Marcado. Mas livre.</p>
+                    <p>Derrota o Minotauro na Arena Final. O script de eventos valida a destruição do Boss e carrega a cena de encerramento da campanha, consagrando a fuga bem-sucedida de Cnossos.</p>
                 </div>
-                <div class="fim prisioneiro">
+                <div class="destino-card derrota">
+                    <div class="destino-icon"></div>
                     <h3>[ PRISIONEIRO ]</h3>
-                    <p>Falha na batalha e fica preso no labirinto para sempre. O labirinto torna-se o teu mundo.</p>
+                    <p>Se a vida de Aiden chegar a zero antes da conclusão, o UIManager congela o estado de jogo e exibe as opções de reinício. O Labirinto clama mais uma alma para a eternidade.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-title">ECHOES OF KNOSSOS</p>
-            <p class="footer-sub">// DESENVOLVIDO COMO PROJETO DE CURSO · 2026 //</p>
+            <h4 class="footer-logo">ECHOES OF KNOSSOS</h4>
+            <p class="footer-text">Trabalho desenvolvido no âmbito da Prova de Aptidão Profissional (PAP)</p>
+            <p class="footer-course">Curso Técnico de Gestão e Programação de Sistemas Informáticos · 2026</p>
         </div>
     </footer>
 
