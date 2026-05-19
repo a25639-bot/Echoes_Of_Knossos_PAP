@@ -1,17 +1,19 @@
-/* ─────────────────────────────────────────
-   ECHOES OF KNOSSOS — Pixel / Retro Style
-───────────────────────────────────────── */
+/* ──────────────────────────────────────────────────────────────────────────
+   ECHOES OF KNOSSOS
+   ────────────────────────────────────────────────────────────────────────── */
 
 :root {
-    --preto: #000000;
-    --preto2: #0d0d0d;
-    --preto3: #141414;
-    --vermelho: #cc1a1a;
-    --vermelho-bright: #ff2222;
-    --vermelho-dim: #661111;
-    --texto: #cccccc;
-    --texto-dim: #777777;
-    --borda: #2a0a0a;
+    --bg-darker: #0d0f13;
+    --bg-main: #14161d;
+    --bg-card: #1c1f27;
+    --primary: #9e1b1b;
+    --primary-bright: #d32f2f;
+    --gold: #d4af37;
+    --gold-dim: #aa8c2c;
+    --text-white: #ffffff;
+    --text-muted: #9fa4b0;
+    --border: #292e3a;
+    --success: #388e3c;
 }
 
 * {
@@ -20,427 +22,412 @@
     box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    background: var(--preto);
-    color: var(--texto);
+    background-color: var(--bg-main);
+    color: var(--text-muted);
     font-family: 'VT323', monospace;
-    font-size: 18px;
-    cursor: default;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
 }
 
-/* ─── SCANLINES OVERLAY ─────────────────── */
-
-.scanlines {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.08) 2px,
-        rgba(0,0,0,0.08) 4px
-    );
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* ─── HERO ─────────────────────────────── */
+/* COMPONENTES GENÉRICOS */
+.gold-text { color: var(--gold); }
 
+.section-label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    color: var(--gold-dim);
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    color: var(--text-white);
+    margin-bottom: 2.5rem;
+    border-left: 5px solid var(--primary);
+    padding-left: 1rem;
+}
+
+.section-text {
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 4rem;
+}
+
+/* BOTÕES */
+.btn {
+    display: inline-block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    padding: 1rem 1.8rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--text-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(158, 27, 27, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION */
 .hero {
     height: 100vh;
-    min-height: 500px;
+    background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-main) 100%);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    background: var(--preto);
-    border-bottom: 2px solid var(--vermelho-dim);
     position: relative;
-    overflow: hidden;
+    border-bottom: 3px solid var(--border);
 }
 
-.hero::after {
-    content: '';
+.hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(204,26,26,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(158, 27, 27, 0.15) 0%, transparent 80%);
     pointer-events: none;
 }
 
 .hero-content {
-    position: relative;
     z-index: 2;
-    padding: 2rem;
+    padding: 0 1.5rem;
 }
 
 .hero-eyebrow {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.5rem;
-    color: var(--vermelho-dim);
-    letter-spacing: 0.2em;
-    margin-bottom: 2rem;
-    animation: blink 2s step-end infinite;
+    font-size: 0.7rem;
+    color: var(--primary-bright);
+    margin-bottom: 1.5rem;
 }
 
 .hero-title {
     font-family: 'Press Start 2P', monospace;
-    font-size: clamp(1.8rem, 5vw, 4rem);
-    color: var(--vermelho);
-    line-height: 1.4;
-    text-shadow:
-        3px 3px 0px #660000,
-        0 0 40px rgba(204,26,26,0.4);
-    letter-spacing: 0.05em;
-    animation: glitch 8s ease infinite;
+    font-size: clamp(1.8rem, 6vw, 4.2rem);
+    color: var(--text-white);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
 }
 
 .hero-subtitle {
-    font-family: 'VT323', monospace;
-    font-size: 1.4rem;
-    color: var(--texto-dim);
-    margin: 2rem 0 3rem;
-    letter-spacing: 0.1em;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 3rem;
 }
 
-.hero-btn {
-    display: inline-block;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.6rem;
-    color: var(--preto);
-    background: var(--vermelho);
-    padding: 1rem 2rem;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    border: 2px solid var(--vermelho-bright);
-    transition: background 0.1s, transform 0.1s;
-    image-rendering: pixelated;
-}
-
-.hero-btn:hover {
-    background: var(--vermelho-bright);
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 var(--vermelho-dim);
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
 .scroll-hint {
     position: absolute;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.7rem;
-    color: var(--vermelho-dim);
-    animation: bounce 1.5s step-end infinite;
+    font-size: 0.6rem;
+    color: var(--border);
 }
 
-/* ─── SHARED ────────────────────────────── */
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-section { padding: 6rem 0; }
-
-section::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, var(--vermelho-dim), transparent);
-    margin-bottom: 0rem;
-}
-
-.hero::before { display: none; }
-
-.section-label {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.5rem;
-    color: var(--vermelho-dim);
-    letter-spacing: 0.2em;
-    margin-bottom: 1.2rem;
-    margin-top: 0.5rem;
-}
-
-.section-title {
-    font-family: 'Press Start 2P', monospace;
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
-    color: var(--vermelho);
-    margin-bottom: 2rem;
-    line-height: 1.5;
-    text-shadow: 2px 2px 0 #440000;
-}
-
-.section-text {
-    font-size: 1.2rem;
-    line-height: 1.9;
-    color: var(--texto);
-    max-width: 700px;
-    margin-bottom: 3.5rem;
-}
-
-/* ─── SOBRE ─────────────────────────────── */
-
-.sobre { background: var(--preto2); }
+/* SOBRE / CARDS */
+.sobre { background-color: var(--bg-darker); padding: 6rem 0; }
 
 .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1.5rem 0;
 }
 
-.feature {
-    background: var(--preto);
-    border: 1px solid var(--borda);
-    border-left: 3px solid var(--vermelho-dim);
-    padding: 1.8rem;
-    transition: border-left-color 0.1s, transform 0.1s;
+.feature-card {
+    display: table-cell;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    width: 33.33%;
+    vertical-align: top;
+    transition: transform 0.2s ease;
 }
 
-.feature:hover {
-    border-left-color: var(--vermelho);
-    transform: translate(-2px, -2px);
-    box-shadow: 3px 3px 0 var(--vermelho-dim);
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
 }
 
 .feature-icon {
-    font-family: 'VT323', monospace;
-    font-size: 1.5rem;
-    color: var(--vermelho);
-    margin-bottom: 0.8rem;
-}
-
-.feature h3 {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.55rem;
-    color: var(--vermelho);
+    font-size: 2rem;
+    color: var(--gold);
     margin-bottom: 1rem;
-    letter-spacing: 0.05em;
 }
 
-.feature p {
+.feature-card h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
     font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--texto-dim);
 }
 
-/* ─── DEUSES ────────────────────────────── */
-
-.deuses { background: var(--preto3); }
+/* DEUSES */
+.deuses { padding: 6rem 0; }
 
 .deuses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1.5rem 0;
 }
 
-.deus {
-    background: var(--preto);
-    border: 1px solid var(--borda);
+.deus-card {
+    display: table-cell;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
     padding: 2rem;
-    transition: transform 0.1s;
+    width: 33.33%;
+    position: relative;
 }
 
-.deus:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 3px 3px 0 var(--vermelho-dim);
-}
-
-.deus.atena { border-top: 3px solid #336622; }
-.deus.ares  { border-top: 3px solid var(--vermelho); }
-.deus.poseidon { border-top: 3px solid #1a3a6a; }
-
-.deus-symbol {
-    font-family: 'VT323', monospace;
-    font-size: 1.5rem;
-    color: var(--vermelho-dim);
-    margin-bottom: 0.8rem;
-}
-
-.deus h3 {
+.deus-badge {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.7rem;
-    color: var(--vermelho);
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 0 #440000;
+    font-size: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    background-color: rgba(255,255,255,0.05);
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
 }
 
-.deus-titulo {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.4rem;
-    letter-spacing: 0.1em;
-    color: var(--texto-dim);
-    margin-bottom: 1rem;
-}
+.atena .deus-badge { color: var(--success); }
+.ares .deus-badge { color: var(--primary-bright); }
+.poseidon .deus-badge { color: #2196f3; }
 
-.deus p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--texto-dim);
-    margin-bottom: 1.2rem;
-}
-
-.deus-tag {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.4rem;
-    padding: 0.4rem 0.8rem;
-    border: 1px solid currentColor;
-    display: inline-block;
-    letter-spacing: 0.1em;
-}
-
-.atena .deus-tag { color: #449933; }
-.ares .deus-tag { color: var(--vermelho); }
-.poseidon .deus-tag { color: #2266aa; }
-
-/* ─── INIMIGOS ──────────────────────────── */
-
-.inimigos { background: var(--preto2); }
-
-.inimigos-list { margin-top: 1rem; }
-
-.inimigo {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--borda);
-    transition: padding-left 0.1s, background 0.1s;
-    cursor: default;
-}
-
-.inimigo:first-child { border-top: 1px solid var(--borda); }
-
-.inimigo:hover {
-    padding-left: 1rem;
-    background: rgba(204,26,26,0.03);
-}
-
-.inimigo.boss {
-    border-color: var(--vermelho-dim);
-}
-
-.inimigo-num {
+.deus-card h3 {
     font-family: 'Press Start 2P', monospace;
     font-size: 1rem;
-    color: var(--borda);
-    min-width: 55px;
-    text-align: center;
-    transition: color 0.1s;
+    color: var(--text-white);
+    margin-top: 1rem;
 }
 
-.inimigo:hover .inimigo-num { color: var(--vermelho-dim); }
-.inimigo.boss .inimigo-num { color: var(--vermelho-dim); }
+.deus-lore {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    color: var(--gold-dim);
+    margin-bottom: 1.5rem;
+}
 
-.inimigo-info h3 {
+.deus-desc {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.deus-stat {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    color: var(--text-white);
+    background-color: var(--bg-darker);
+    padding: 0.6rem;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+/* BESTIÁRIO INTERATIVO (TABS) */
+.inimigos { background-color: var(--bg-darker); padding: 6rem 0; }
+
+.tabs-container {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.tab-switch {
+    display: none;
+}
+
+.tab-label {
+    display: inline-block;
     font-family: 'Press Start 2P', monospace;
     font-size: 0.7rem;
-    color: var(--texto);
-    margin-bottom: 0.6rem;
-    transition: color 0.1s;
+    padding: 1rem 1.5rem;
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.inimigo:hover .inimigo-info h3 { color: var(--vermelho); }
-.inimigo.boss .inimigo-info h3 { color: var(--vermelho); }
-
-.inimigo-info p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--texto-dim);
+.tab-switch:checked + .tab-label {
+    background-color: var(--bg-card);
+    color: var(--gold);
+    border-top: 3px solid var(--gold);
+    padding-bottom: 1.1rem;
 }
 
-/* ─── FINAL ─────────────────────────────── */
+.tab-content {
+    display: none;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 3rem;
+}
 
-.final { background: var(--preto3); }
+/* Controle Exibição das Abas */
+#tab-knight:checked ~ .content-knight,
+#tab-eye:checked ~ .content-eye,
+#tab-minotaur:checked ~ .content-minotaur {
+    display: block;
+}
+
+.enemy-view {
+    display: block;
+}
+
+.enemy-type {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    color: var(--primary-bright);
+}
+
+.enemy-details h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.4rem;
+    color: var(--text-white);
+    margin: 0.5rem 0 1.5rem;
+}
+
+.enemy-details p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.enemy-components {
+    list-style: none;
+    background-color: var(--bg-darker);
+    padding: 1.5rem;
+    border-left: 4px solid var(--gold);
+}
+
+.enemy-components li {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+/* CARD DE DESTINO FINAIS */
+.destino { padding: 6rem 0; }
 
 .finais-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2rem 0;
 }
 
-.fim {
-    background: var(--preto);
-    border: 1px solid var(--borda);
-    padding: 2.5rem 2rem;
-    transition: transform 0.1s;
-}
-
-.fim:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 3px 3px 0 var(--vermelho-dim);
-}
-
-.fim.liberdade { border-bottom: 3px solid #336622; }
-.fim.prisioneiro { border-bottom: 3px solid var(--vermelho); }
-
-.fim h3 {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.7rem;
-    margin-bottom: 1.2rem;
-    line-height: 1.6;
-}
-
-.liberdade h3 { color: #449933; }
-.prisioneiro h3 { color: var(--vermelho); }
-
-.fim p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--texto-dim);
-}
-
-/* ─── FOOTER ────────────────────────────── */
-
-.footer {
-    padding: 3rem 0;
-    background: var(--preto);
-    border-top: 2px solid var(--vermelho-dim);
+.destino-card {
+    display: table-cell;
+    width: 50%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 3rem 2rem;
     text-align: center;
 }
 
-.footer-title {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.8rem;
-    color: var(--vermelho-dim);
+.destino-icon {
+    font-size: 3rem;
     margin-bottom: 1rem;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 0 #220000;
 }
 
-.footer-sub {
-    font-family: 'VT323', monospace;
+.destino-card h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.vitoria h3 { color: var(--success); }
+.derrota h3 { color: var(--primary-bright); }
+
+.destino-card p {
+    font-size: 1.25rem;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--border);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: 'Press Start 2P', monospace;
     font-size: 1rem;
-    letter-spacing: 0.2em;
-    color: var(--texto-dim);
+    color: var(--text-white);
+    margin-bottom: 1rem;
 }
 
-/* ─── ANIMATIONS ────────────────────────── */
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+.footer-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-    50% { transform: translateX(-50%) translateY(6px); opacity: 0.5; }
+.footer-course {
+    font-size: 1rem;
+    color: var(--gold-dim);
 }
 
-@keyframes glitch {
-    0%, 90%, 100% { text-shadow: 3px 3px 0px #660000, 0 0 40px rgba(204,26,26,0.4); }
-    92% { text-shadow: -3px 3px 0px #660000, 3px -3px 0 rgba(204,26,26,0.6), 0 0 40px rgba(204,26,26,0.4); transform: translate(2px, 0); }
-    94% { text-shadow: 3px -3px 0px #660000, -3px 3px 0 rgba(204,26,26,0.6), 0 0 40px rgba(204,26,26,0.4); transform: translate(-2px, 0); }
-    96% { text-shadow: 3px 3px 0px #660000, 0 0 40px rgba(204,26,26,0.4); transform: translate(0); }
-}
-
-/* ─── RESPONSIVE ────────────────────────── */
-
-@media (max-width: 700px) {
-    .finais-grid { grid-template-columns: 1fr; }
-    .hero-title { font-size: 1.5rem; }
-    .section-title { font-size: 0.9rem; }
+/* RESPONSIVIDADE ADAPTADA */
+@media (max-width: 768px) {
+    .features, .deuses-grid, .finais-grid {
+        display: block;
+        width: 100%;
+    }
+    .feature-card, .deus-card, .destino-card {
+        display: block;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .tab-label {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.2rem;
+        border-bottom: 1px solid var(--border);
+    }
 }
