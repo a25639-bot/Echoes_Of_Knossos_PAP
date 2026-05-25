@@ -401,5 +401,76 @@ body {
     .main-nav a { margin: 0 0.6rem; }
     body { padding-top: 110px; }
     .hero-section { height: calc(100vh - 110px); }
+
+
+   /* ─── SECÇÃO DE RECURSOS (ATUALIZAÇÃO) ─────────────────── */
+
+.recursos-bg {
+    background-color: var(--bg-light-grey); /* Cinzento alternado para separar as secções */
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Cria uma grelha flexível moderna para as 5 ferramentas */
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.recurso-card {
+    background-color: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-top: 4px solid var(--red-neon); /* Linha superior em vermelho néon para combinar */
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.recurso-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--red-neon);
+}
+
+/* Contentor especial para o Logótipo da aplicação */
+.recurso-img-wrapper {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo ligeiramente escurecido para destacar o logo */
+    border: 1px dashed var(--border-color);
+    padding: 0.5rem;
+}
+
+/* Garante legibilidade e ajuste de tamanho automático da imagem */
+.recurso-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+
+.recurso-card h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.85rem;
+    color: var(--text-white);
+    margin-bottom: 0.4rem;
+}
+
+.recurso-subtitle {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.45rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.recurso-text {
+    font-size: 1.25rem;
+    color: var(--text-clear);
+    line-height: 1.6;
+    text-align: left; /* Mantém a leitura do bloco de texto limpa */
+}
     .enemy-item { flex-direction: column; text-align: center; gap: 1rem; }
 }
