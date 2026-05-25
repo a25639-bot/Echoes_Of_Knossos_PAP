@@ -403,25 +403,25 @@ body {
     .hero-section { height: calc(100vh - 110px); }
 
 
-   /* ─── SECÇÃO DE RECURSOS (ATUALIZAÇÃO) ─────────────────── */
+/* ─── SECÇÃO DE RECURSOS (IMAGENS MENORES E 2 LINHAS DE 3) ─────────────────── */
 
 .recursos-bg {
-    background-color: var(--bg-light-grey); /* Cinzento alternado para separar as secções */
+    background-color: var(--bg-light-grey);
     border-bottom: 2px solid var(--border-color);
 }
 
-/* Cria uma grelha flexível moderna para as 5 ferramentas */
+/* Força exatamente 3 colunas no computador (2 linhas de 3 para os 6 itens) */
 .recursos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .recurso-card {
     background-color: var(--bg-card);
     border: 2px solid var(--border-color);
-    border-top: 4px solid var(--red-neon); /* Linha superior em vermelho néon para combinar */
-    padding: 2.5rem 2rem;
+    border-top: 4px solid var(--red-neon);
+    padding: 2rem 1.5rem; /* Diminuído ligeiramente o preenchimento para ficar mais compacto */
     text-align: center;
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
@@ -431,30 +431,30 @@ body {
     border-color: var(--red-neon);
 }
 
-/* Contentor especial para o Logótipo da aplicação */
+/* Contentor da imagem — Reduzido de 90px para 55px */
 .recurso-img-wrapper {
     width: 100%;
-    height: 90px;
+    height: 55px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.2); /* Fundo ligeiramente escurecido para destacar o logo */
+    margin-bottom: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.2);
     border: 1px dashed var(--border-color);
-    padding: 0.5rem;
+    padding: 0.3rem;
 }
 
-/* Garante legibilidade e ajuste de tamanho automático da imagem */
+/* Imagem ajustada para tamanho menor e discreto */
 .recurso-img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 40px; /* Força os logótipos a serem pequenos e uniformes */
     object-fit: contain;
     filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
 }
 
 .recurso-card h3 {
     font-family: 'Press Start 2P', monospace;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-white);
     margin-bottom: 0.4rem;
 }
@@ -463,14 +463,27 @@ body {
     font-family: 'Press Start 2P', monospace;
     font-size: 0.45rem;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .recurso-text {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-clear);
-    line-height: 1.6;
-    text-align: left; /* Mantém a leitura do bloco de texto limpa */
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* RESPONSIVIDADE: Evita que o design quebre em ecrãs mais pequenos */
+@media (max-width: 950px) {
+    .recursos-grid {
+        grid-template-columns: repeat(2, 1fr); /* Passa para 3 linhas de 2 em tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    .recursos-grid {
+        grid-template-columns: 1fr; /* Passa para 1 coluna vertical em telemóveis */
+    }
 }
     .enemy-item { flex-direction: column; text-align: center; gap: 1rem; }
 }
